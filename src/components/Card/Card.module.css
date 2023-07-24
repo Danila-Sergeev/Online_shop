@@ -1,0 +1,31 @@
+.card {
+  cursor: pointer;
+  display: flex;
+  width: 300px;
+  height: 380px;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 1px 1px 10px #dceae8;
+  margin-top: 40px;
+  transition: box-shadow 0.5s ease-in-out;
+}
+.card:hover {
+  box-shadow: 3px 3px 10px #ababab;
+  transition: 0.5s;
+  .img {
+    max-width: 200px;
+  }
+}
+.img {
+  max-width: 180px;
+  margin-top: 20px;
+  transition: max-width 0.5s ease-in-out;
+}
+.name {
+  padding-top: 20px;
+  margin: 0;
+}
+.price {
+  margin: 0;
+  padding-top: 20px;
+}

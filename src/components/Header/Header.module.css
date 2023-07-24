@@ -1,0 +1,51 @@
+@font-face {
+  font-family: Proppins;
+  src: url(../../../public/fonts/Poppins-Light.ttf);
+}
+
+.header {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.title {
+  font-family: Proppins;
+  margin: 0;
+  margin-top: 8px;
+}
+.links {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+.link {
+  margin-left: 60px;
+  list-style: none;
+  cursor: pointer;
+}
+.link:first-child {
+  margin-left: 0px;
+}
+.img {
+  width: 30px;
+  padding-top: 05px;
+  cursor: pointer;
+}
+.imgBox {
+  margin-left: 60px;
+  display: flex;
+  align-items: center;
+}
+.imgBox:first-child {
+  margin-left: 0px;
+}
+.img_shop {
+  width: 20px;
+  padding-top: 1px;
+  padding-left: 5px;
+  cursor: pointer;
+}
+.line {
+  margin-bottom: 20px;
+}
