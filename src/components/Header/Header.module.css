@@ -18,11 +18,14 @@
   display: flex;
   align-items: center;
   padding: 0;
+  color: inherit;
 }
 .link {
   margin-left: 60px;
   list-style: none;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 .link:first-child {
   margin-left: 0px;
@@ -48,4 +51,15 @@
 }
 .line {
   margin-bottom: 20px;
+}
+.activeLink {
+  margin-left: 60px;
+  list-style: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: solid 1.33px black;
+}
+.activeLink:first-child {
+  margin-left: 0px;
 }

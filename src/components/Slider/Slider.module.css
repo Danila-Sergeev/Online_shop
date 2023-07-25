@@ -1,0 +1,67 @@
+@font-face {
+  font-family: Cinzel;
+  src: url(../../../public/fonts/Cinzel-Medium.ttf);
+}
+
+.box {
+  margin: auto;
+  font-family: "Tinos", serif;
+  height: 470px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 3px solid;
+  border-bottom: 3px solid;
+  border-color: rgb(71, 157, 112);
+}
+.img {
+  max-width: 300px;
+}
+.titleBox {
+  margin-left: 30px;
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+}
+.title {
+  max-width: 280px;
+  font-size: 35px;
+  text-align: center;
+  margin: 0;
+  margin-bottom: 20px;
+}
+.subtitle {
+  margin: 0;
+  font-size: 19px;
+  margin-bottom: 20px;
+}
+.button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  font-size: 18px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: rgb(71, 157, 112);
+  transition: background-color 0.3s ease-in-out;
+  transition: border-radius 0.3s ease-in-out;
+  cursor: pointer;
+  width: 150px;
+  height: 45px;
+}
+.button:hover {
+  border-radius: 5px;
+  background-color: rgb(58, 128, 91);
+}
+.pagination {
+  --swiper-pagination-color: rgb(71, 157, 112);
+  --swiper-pagination-left: auto;
+  --swiper-pagination-right: 2px;
+  --swiper-pagination-bottom: 10px;
+  --swiper-pagination-top: auto;
+  --swiper-pagination-bullet-width: 15px;
+  --swiper-pagination-bullet-height: 3px;
+  --swiper-pagination-bullet-border-radius: 0%;
+}

@@ -8,12 +8,11 @@ export default function Shop() {
         if (obj.id <= 15) {
           return (
             <div>
-              <Card key={obj.id} {...obj}></Card>
+              <Card key={obj.image} {...obj}></Card>
             </div>
           );
         }
       })}
-      <img src=""></img>
     </div>
   );
 }
