@@ -21,6 +21,7 @@ export default function Home() {
             if (obj.id === 9) {
               return (
                 <img
+                  key={obj.image}
                   className={homeStiles.img}
                   src={obj.image}
                   alt={obj.name}
@@ -30,9 +31,9 @@ export default function Home() {
           })}
           <div className={hoveStyles.titleBox}>
             <p className={hoveStyles.text}> LEANING IN</p>
-            <NavLink to="/shop" className={homeStiles.link}>
+            <p to="/shop" className={homeStiles.link}>
               SHOP NEW
-            </NavLink>
+            </p>
           </div>
         </NavLink>
         <NavLink to="/shop" className={homeStiles.photoBox}>
@@ -40,6 +41,7 @@ export default function Home() {
             if (obj.id === 7) {
               return (
                 <img
+                  key={obj.image}
                   className={homeStiles.img}
                   src={obj.image}
                   alt={obj.name}
@@ -50,9 +52,9 @@ export default function Home() {
 
           <div className={hoveStyles.titleBox}>
             <p className={hoveStyles.text}> LEANING IN</p>
-            <NavLink to="/shop" className={homeStiles.link}>
+            <p to="/shop" className={homeStiles.link}>
               SHOP NEW
-            </NavLink>
+            </p>
           </div>
         </NavLink>
       </div>
@@ -60,7 +62,7 @@ export default function Home() {
         {data.map((obj) => {
           if (obj.id <= 3) {
             return (
-              <div className={homeStiles.card}>
+              <div key={obj.image} className={homeStiles.card}>
                 <Card key={obj.image} {...obj}></Card>
               </div>
             );

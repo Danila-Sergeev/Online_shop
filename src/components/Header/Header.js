@@ -9,8 +9,6 @@ export default function Header() {
           <div>
             <NavLink
               to="/home"
-              id="home"
-              href="/home"
               className={({ isActive }) =>
                 isActive ? headerStiles.activeLink : headerStiles.link
               }
@@ -21,37 +19,27 @@ export default function Header() {
 
           <NavLink
             to="/shop"
-            id="shop"
-            href="/shop"
             className={({ isActive }) =>
               isActive ? headerStiles.activeLink : headerStiles.link
             }
           >
             Shop
           </NavLink>
-          <NavLink className={headerStiles.link} id="about" href="/about">
-            About Us
-          </NavLink>
+          <NavLink className={headerStiles.link}>About Us</NavLink>
         </div>
         <h1 className={headerStiles.title}>Online shop</h1>
         <div className={headerStiles.links}>
           <div className={headerStiles.imgBox}>
-            <NavLink className={headerStiles.link} id="search" href="/search">
-              Search
-            </NavLink>
+            <NavLink className={headerStiles.link}>Search</NavLink>
             <img
               className={headerStiles.img}
               src={require("../../logo/free-icon-search-2414255.png")}
             />
           </div>
 
-          <NavLink className={headerStiles.link} id="sign" href="/sign">
-            Sign In
-          </NavLink>
+          <NavLink className={headerStiles.link}>Sign In</NavLink>
           <div className={headerStiles.imgBox}>
-            <NavLink className={headerStiles.link} id="baket" href="/baket">
-              0 items
-            </NavLink>
+            <NavLink className={headerStiles.link}>0 items</NavLink>
             <img
               className={headerStiles.img_shop}
               src={require("../../logo/free-icon-shopping-bag-4903482.png")}

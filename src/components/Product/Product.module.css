@@ -1,0 +1,43 @@
+.imgMin {
+  max-width: 100px;
+  cursor: pointer;
+  margin: 0 20px 10px 0px;
+}
+.imgBox {
+  display: flex;
+  flex-direction: column;
+}
+.imgLarge {
+  max-width: 400px;
+}
+.box {
+  display: flex;
+  max-height: 550px;
+}
+.mainBox {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 70px;
+}
+.infoBox {
+  max-width: 400px;
+}
+.btn {
+  color: white;
+  padding: 0;
+  border: none;
+  font: inherit;
+  font-size: 18px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: black;
+  transition: background-color 0.3s ease-in-out;
+  transition: border-radius 0.3s ease-in-out;
+  cursor: pointer;
+  width: 150px;
+  height: 45px;
+}
+.btn:hover {
+  border-radius: 5px;
+  background-color: rgb(51, 54, 53);
+}

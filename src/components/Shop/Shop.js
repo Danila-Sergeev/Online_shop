@@ -6,11 +6,7 @@ export default function Shop() {
     <div className={shopStyles.shop}>
       {data.map((obj) => {
         if (obj.id <= 15) {
-          return (
-            <div>
-              <Card key={obj.image} {...obj}></Card>
-            </div>
-          );
+          return <Card key={obj.image} {...obj}></Card>;
         }
       })}
     </div>

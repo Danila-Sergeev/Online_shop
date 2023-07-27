@@ -39,8 +39,11 @@
 }
 .button {
   padding: 0;
+
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
   border: none;
-  font: inherit;
   font-size: 18px;
   border: 1px solid black;
   border-radius: 10px;
@@ -54,6 +57,10 @@
 .button:hover {
   border-radius: 5px;
   background-color: rgb(58, 128, 91);
+}
+.buttonLink {
+  text-decoration: none;
+  color: inherit;
 }
 .pagination {
   --swiper-pagination-color: rgb(71, 157, 112);

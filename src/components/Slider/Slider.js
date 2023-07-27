@@ -1,5 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
+import { NavLink } from "react-router-dom";
 import data from "../../utils/data";
 import "../../../node_modules/swiper/swiper-bundle.min.css";
 
@@ -25,15 +26,17 @@ export default function Slider() {
                     className={sliderStyles.img}
                     src={obj.image}
                     alt={obj.name}
-                  ></img>{" "}
+                  ></img>
                   <div className={sliderStyles.titleBox}>
                     <h2 className={sliderStyles.title}>ELEVATE YOUR WARDOBE</h2>
                     <h4 className={sliderStyles.subtitle}>
                       Shop Our Trendy Fasion
                     </h4>
-                    <button className={sliderStyles.button}>
-                      Go To Catalog
-                    </button>
+                    <NavLink to="/shop" className={sliderStyles.buttonLink}>
+                      <button className={sliderStyles.button}>
+                        Go To Catalog
+                      </button>
+                    </NavLink>
                   </div>
                 </div>
               </SwiperSlide>
