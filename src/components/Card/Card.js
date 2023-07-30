@@ -1,5 +1,5 @@
 import cardStyle from "./Card.module.css";
-import { NavLink, Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function Card(props) {
   const navigate = useNavigate();

@@ -1,0 +1,30 @@
+.img {
+  max-width: 100px;
+}
+.box {
+  display: flex;
+  margin: 20px auto 20px auto;
+  border: solid 1px;
+  align-items: center;
+  justify-content: space-around;
+  width: 400px;
+  height: 200px;
+  overflow: hidden;
+}
+.main {
+  margin: auto;
+  padding-right: 20px;
+  max-height: 600px;
+  overflow-y: scroll;
+}
+.main::-webkit-scrollbar {
+  width: 8px;
+}
+
+.main::-webkit-scrollbar-track {
+  background: black;
+}
+
+.main::-webkit-scrollbar-thumb {
+  background-color: white;
+}

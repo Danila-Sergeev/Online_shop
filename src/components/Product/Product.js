@@ -10,7 +10,7 @@ export default function Product() {
   useEffect(() => {
     setSrc(props.image);
   }, []);
-  const { state } = useLocation();
+  const { state } = useLocation() || {};
   const { props } = state;
 
   return (

@@ -230,7 +230,7 @@ export default [
     price: 2800,
     data: "",
   },
-  {
+  /*  {
     id: 16,
     name: "Юбка мини-плиссе",
     image: "https://example.com/skirt.jpg",
@@ -342,5 +342,5 @@ export default [
     image: "https://example.com/coat.jpg",
     price: 5000,
     data: "",
-  },
+  }, */
 ];
