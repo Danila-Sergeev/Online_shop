@@ -4,6 +4,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   overflow: hidden;
+  z-index: 1000;
 }
 .modal {
   transform: 0.3s;
