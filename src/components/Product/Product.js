@@ -2,6 +2,9 @@ import productStyle from "./Product.module.css";
 import data from "../../utils/data";
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { ADD_ITEM } from "../../services/actions/cardItems";
+
 export default function Product() {
   const [src, setSrc] = useState("../../logo/Group 4.png");
   const largeImg = (imgSrc) => {
@@ -12,7 +15,13 @@ export default function Product() {
   }, []);
   const { state } = useLocation() || {};
   const { props } = state;
+  const Carditems = useSelector((store) => store.cardItem.items);
+  console.log(Carditems);
 
+  const dispatch = useDispatch();
+  const addItem = () => {
+    dispatch({ type: ADD_ITEM, item: { props } });
+  };
   return (
     <div className={productStyle.mainBox}>
       <div className={productStyle.box}>
@@ -53,7 +62,9 @@ export default function Product() {
         <hr></hr>
         <p className={productStyle.about}>{props.data}</p>
         <div className={productStyle.sizesBox}></div>
-        <button className={productStyle.btn}>Add to Card</button>
+        <button onClick={addItem} className={productStyle.btn}>
+          Add to Card
+        </button>
       </div>
     </div>
   );

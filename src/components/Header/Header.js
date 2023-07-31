@@ -1,12 +1,13 @@
 import { NavLink } from "react-router-dom";
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import headerStiles from "./Header.module.css";
 import CardPopup from "../CardPopup/CardPopup";
 import CardElement from "../CardElement/CardElement";
+import { useDispatch, useSelector } from "react-redux";
 export default function Header() {
   /* Обработчик состояния попапа */
   const [modal, setModal] = useState(false);
-
+  const Carditems = useSelector((store) => store.cardItem.items);
   /*  Обработчики открытия/закрытия попапа */
   const handleOpenModal = () => {
     setModal(true);
@@ -14,6 +15,7 @@ export default function Header() {
   const handleCloseModal = () => {
     setModal(false);
   };
+
   return (
     <div>
       <div className={headerStiles.header}>
@@ -58,7 +60,7 @@ export default function Header() {
           </NavLink>
           <div className={headerStiles.imgBox}>
             <div onClick={handleOpenModal} className={headerStiles.link}>
-              0 items
+              {Carditems.length} items
             </div>
             <img
               className={headerStiles.img_shop}

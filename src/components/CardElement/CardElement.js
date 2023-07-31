@@ -1,13 +1,15 @@
 import cardElementStyles from "./CardElement.module.css";
 import data from "../../utils/data";
+import { useDispatch, useSelector } from "react-redux";
 export default function CardElement() {
+  const Carditems = useSelector((store) => store.cardItem.items);
   return (
     <div className={cardElementStyles.main}>
-      {data.map((item) => {
+      {Carditems.map((item) => {
         return (
-          <div className={cardElementStyles.box} key={item.image}>
-            <img className={cardElementStyles.img} src={item.image}></img>
-            <p className={cardElementStyles.name}>{item.name}</p>
+          <div className={cardElementStyles.box} key={item.props.image}>
+            <img className={cardElementStyles.img} src={item.props.image}></img>
+            <p className={cardElementStyles.name}>{item.props.name}</p>
           </div>
         );
       })}
