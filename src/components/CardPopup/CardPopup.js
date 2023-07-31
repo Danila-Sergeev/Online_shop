@@ -21,10 +21,7 @@ export default function CardPopup({ onClose, children }) {
     <>
       <CardPopupOverlay onClose={onClose} />
       <div className={popupStyles.box}>
-        <div className={popupStyles.modal}>
-          <button className={popupStyles.close} onClick={onClose}></button>
-          {children}
-        </div>
+        <div className={popupStyles.modal}>{children}</div>
       </div>
     </>,
     modalRoot

@@ -3,7 +3,7 @@
 }
 .box {
   display: flex;
-  margin: 20px auto 20px auto;
+  margin: 70px auto 20px auto;
   border: solid 1px;
   align-items: center;
   justify-content: space-around;
@@ -38,4 +38,26 @@
 }
 .bascet {
   max-width: 30px;
+}
+.resetBtn {
+  color: black;
+  padding: 0;
+  border: none;
+  font: inherit;
+  font-size: 18px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: white;
+  transition: background-color 0.3s ease-in-out;
+  transition: border-radius 0.3s ease-in-out;
+  cursor: pointer;
+  width: 150px;
+  height: 45px;
+  position: absolute;
+  left: 35%;
+  margin-top: 10px;
+}
+.resetBtn:hover {
+  border-radius: 5px;
+  background-color: aliceblue;
 }

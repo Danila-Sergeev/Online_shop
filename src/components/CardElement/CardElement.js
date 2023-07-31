@@ -2,12 +2,15 @@ import cardElementStyles from "./CardElement.module.css";
 import data from "../../utils/data";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { REMOVE_ITEM } from "../../services/actions/cardItems";
+import { REMOVE_ITEM, RESET_ITEM } from "../../services/actions/cardItems";
 export default function CardElement({ onClose }) {
   const Carditems = useSelector((store) => store.cardItem.items);
   const dispatch = useDispatch();
   const removeItem = (id4) => {
     dispatch({ type: REMOVE_ITEM, id4 });
+  };
+  const resetItem = () => {
+    dispatch({ type: RESET_ITEM });
   };
   useEffect(() => {
     if (Carditems.length === 0) {
@@ -17,6 +20,13 @@ export default function CardElement({ onClose }) {
 
   return (
     <div className={cardElementStyles.main}>
+      <button
+        onClick={() => resetItem()}
+        className={cardElementStyles.resetBtn}
+      >
+        {" "}
+        Reset Card
+      </button>
       {Carditems.map((items) => {
         let item = items.props;
         return (
