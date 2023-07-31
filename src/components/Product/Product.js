@@ -16,9 +16,6 @@ export default function Product() {
   }, []);
   const { state } = useLocation() || {};
   const { props } = state;
-  const Carditems = useSelector((store) => store.cardItem.items);
-  console.log(Carditems);
-
   const dispatch = useDispatch();
   const addItem = () => {
     dispatch({ type: ADD_ITEM, item: { props, id4: uuidv4() } });

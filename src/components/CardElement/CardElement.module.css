@@ -10,6 +10,7 @@
   width: 400px;
   height: 200px;
   overflow: hidden;
+  position: relative;
 }
 .main {
   margin: auto;
@@ -29,6 +30,10 @@
   background-color: white;
 }
 .btn {
+  cursor: pointer;
+  position: absolute;
+  top: 10%;
+  right: 5%;
   color: white;
   padding: 0;
   border: none;
@@ -38,8 +43,13 @@
 }
 .bascet {
   max-width: 30px;
+  transition: max-width 0.3s ease-in-out;
+}
+.bascet:hover {
+  max-width: 35px;
 }
 .resetBtn {
+  z-index: 10000;
   color: black;
   padding: 0;
   border: none;
