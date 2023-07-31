@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { ADD_ITEM } from "../../services/actions/cardItems";
+import { v4 as uuidv4 } from "uuid";
 
 export default function Product() {
   const [src, setSrc] = useState("../../logo/Group 4.png");
@@ -20,7 +21,7 @@ export default function Product() {
 
   const dispatch = useDispatch();
   const addItem = () => {
-    dispatch({ type: ADD_ITEM, item: { props } });
+    dispatch({ type: ADD_ITEM, item: { props, id4: uuidv4() } });
   };
   return (
     <div className={productStyle.mainBox}>
