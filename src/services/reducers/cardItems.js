@@ -20,7 +20,7 @@ export const cardItemReducer = (state = initialState, action) => {
     case REMOVE_ITEM: {
       return {
         ...state,
-        items: state.items.filter((item) => item.id !== action.id),
+        items: state.items.filter((item) => item.id4 !== action.id4),
       };
     }
     default: {

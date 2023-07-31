@@ -28,3 +28,14 @@
 .main::-webkit-scrollbar-thumb {
   background-color: white;
 }
+.btn {
+  color: white;
+  padding: 0;
+  border: none;
+  font: inherit;
+  font-size: 18px;
+  background-color: inherit;
+}
+.bascet {
+  max-width: 30px;
+}

@@ -73,7 +73,7 @@ export default function Header() {
       {modal && (
         <CardPopup onClose={handleCloseModal} setModal={setModal}>
           {" "}
-          <CardElement />
+          <CardElement onClose={handleCloseModal} />
         </CardPopup>
       )}
     </div>
