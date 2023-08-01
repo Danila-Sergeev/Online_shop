@@ -11,12 +11,13 @@ export default function Product() {
   const largeImg = (imgSrc) => {
     setSrc(imgSrc);
   };
-  useEffect(() => {
-    setSrc(props.image);
-  }, []);
+
   const { state } = useLocation() || {};
   const { props } = state;
   const dispatch = useDispatch();
+  useEffect(() => {
+    setSrc(props.image);
+  }, [props]);
   const addItem = () => {
     dispatch({ type: ADD_ITEM, item: { props, id4: uuidv4() } });
   };

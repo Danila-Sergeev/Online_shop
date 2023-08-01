@@ -22,6 +22,10 @@ export default function CardElement({ onClose }) {
     Carditems.forEach((item) => (price += item.props.price));
     return price ? price : 0;
   }, [Carditems]);
+  let unq = Carditems.filter(
+    (elem, index) =>
+      Carditems.findIndex((obj) => obj.props.id === elem.props.id) === index
+  );
   return (
     <div className={cardElementStyles.main}>
       <button
@@ -32,24 +36,41 @@ export default function CardElement({ onClose }) {
         Reset Card
       </button>
       {Carditems.map((items) => {
-        let item = items.props;
+        items.props.data = 0;
+
+        /*  подсчет количества повторяющегося товара */
+
+        Carditems.forEach((obj) => {
+          if (items.props.image === obj.props.image) {
+            items.props.data++;
+          }
+        });
+      })}
+
+      {unq.map((unique) => {
+        let uniqueItem = unique.props;
         return (
-          <div className={cardElementStyles.box} key={items.id4}>
-            <img className={cardElementStyles.img} src={item.image}></img>
-            <p className={cardElementStyles.name}>{item.name}</p>
+          <div className={cardElementStyles.box} key={unq.id4}>
+            <img className={cardElementStyles.img} src={uniqueItem.image}></img>
+            <div className={cardElementStyles.info}>
+              <p className={cardElementStyles.name}>{uniqueItem.name}</p>
+              <p className={cardElementStyles.price}>{uniqueItem.price} $</p>
+            </div>
             <button
               onClick={() => removeItem(Carditems.id4)}
               className={cardElementStyles.btn}
             >
               <img
-                onClick={() => removeItem(items.id4)}
+                onClick={() => removeItem(unq.id4)}
                 className={cardElementStyles.bascet}
                 src="https://avatars.mds.yandex.net/i?id=13c7dd9528c82e0e90dad5bbd588771eb5d05453-9043236-images-thumbs&n=13"
               ></img>
             </button>
+            <p className={cardElementStyles.counter}>{uniqueItem.data}</p>
           </div>
         );
       })}
+
       <button className={cardElementStyles.priceBtn}>{fullPrice} $</button>
     </div>
   );

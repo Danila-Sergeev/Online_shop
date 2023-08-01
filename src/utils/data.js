@@ -13,7 +13,7 @@ export default [
     image4:
       "https://cdn-images.farfetch-contents.com/17/75/48/58/17754858_37289606_1000.jpg",
     price: 2500,
-    data: "",
+    data: 1,
   },
   {
     id: 2,
@@ -29,7 +29,7 @@ export default [
     image4:
       "https://cdn-images.farfetch-contents.com/14/73/00/49/14730049_23389786_1000.jpg",
     price: 1500,
-    data: "",
+    data: 1,
   },
   {
     id: 3,
@@ -45,7 +45,7 @@ export default [
     image4:
       "https://cdn-images.farfetch-contents.com/19/87/43/19/19874319_45270765_1000.jpg",
     price: 5000,
-    data: "",
+    data: 1,
   },
   {
     id: 4,
@@ -61,7 +61,7 @@ export default [
     image4:
       "https://cdn-images.farfetch-contents.com/11/74/31/47/11743147_11721118_1000.jpg",
     price: 1000,
-    data: "",
+    data: 1,
   },
   {
     id: 5,
@@ -77,7 +77,7 @@ export default [
     image4:
       "https://cdn-images.farfetch-contents.com/19/31/88/93/19318893_43650958_1000.jpg",
     price: 2000,
-    data: "",
+    data: 1,
   },
   {
     id: 6,
@@ -93,7 +93,7 @@ export default [
     image4:
       "https://cdn-images.farfetch-contents.com/12/70/63/08/12706308_12506477_1000.jpg",
     price: 3000,
-    data: "",
+    data: 1,
   },
   {
     id: 7,
@@ -109,7 +109,7 @@ export default [
     image4:
       "https://cdn-images.farfetch-contents.com/11/78/92/39/11789239_8514843_1000.jpg",
     price: 7000,
-    data: "",
+    data: 1,
   },
   {
     id: 8,
@@ -125,7 +125,7 @@ export default [
     image4:
       "https://cdn-images.farfetch-contents.com/18/52/91/94/18529194_44099505_1000.jpg",
     price: 2500,
-    data: "Смесь хлопка и шерсти, крупная вязка, вязаные края в рубчик, круглый вырез, длинные рукава и прямой подол.",
+    data: 1,
   },
   {
     id: 9,
@@ -141,7 +141,7 @@ export default [
     image4:
       "https://cdn-images.farfetch-contents.com/15/76/62/66/15766266_28788279_1000.jpg",
     price: 5000,
-    data: "",
+    data: 1,
   },
   {
     id: 10,
@@ -155,7 +155,7 @@ export default [
     image3: "",
     image4: "",
     price: 1500,
-    data: "",
+    data: 1,
   },
   {
     id: 11,
@@ -171,7 +171,7 @@ export default [
     image4:
       "https://cdn-images.farfetch-contents.com/18/94/28/74/18942874_41719428_1000.jpg",
     price: 1200,
-    data: "",
+    data: 1,
   },
   {
     id: 12,
@@ -187,7 +187,7 @@ export default [
     image4:
       "https://cdn-images.farfetch-contents.com/14/26/17/25/14261725_20256024_1000.jpg",
     price: 1800,
-    data: "",
+    data: 1,
   },
   {
     id: 13,
@@ -199,7 +199,7 @@ export default [
     image3: "",
     image4: "",
     price: 4000,
-    data: "",
+    data: 1,
   },
   {
     id: 14,
@@ -212,7 +212,7 @@ export default [
     image3: "",
     image4: "",
     price: 1000,
-    data: "",
+    data: 1,
   },
   {
     id: 15,
@@ -228,21 +228,21 @@ export default [
     image4:
       "https://cdn-images.farfetch-contents.com/17/86/12/73/17861273_38164942_1000.jpg",
     price: 2800,
-    data: "",
+    data: 1,
   },
   /*  {
     id: 16,
     name: "Юбка мини-плиссе",
     image: "https://example.com/skirt.jpg",
     price: 1500,
-    data: "",
+    data: 1,
   },
   {
     id: 17,
     name: "Джинсовая куртка",
     image: "https://example.com/jacket.jpg",
     price: 2200,
-    data: "",
+    data: 1,
   },
 
   {
@@ -250,7 +250,7 @@ export default [
     name: "Толстовка с капюшоном",
     image: "https://example.com/hoodie.jpg",
     price: 1800,
-    data: "",
+    data: 1,
   },
 
   {
@@ -258,7 +258,7 @@ export default [
     name: "Костюм белого цвета",
     image: "https://example.com/suit.jpg",
     price: 5000,
-    data: "",
+    data: 1,
   },
 
   {
@@ -266,7 +266,7 @@ export default [
     name: "Мужская рубашка",
     image: "https://example.com/shirt.jpg",
     price: 2500,
-    data: "",
+    data: 1,
   },
 
   {
@@ -274,7 +274,7 @@ export default [
     name: "Платье с расклешенной юбкой",
     image: "https://example.com/dress.jpg",
     price: 3500,
-    data: "",
+    data: 1,
   },
 
   {
@@ -282,7 +282,7 @@ export default [
     name: "Шорты из льна",
     image: "https://example.com/shorts.jpg",
     price: 1200,
-    data: "",
+    data: 1,
   },
 
   {
@@ -290,7 +290,7 @@ export default [
     name: "Пиджак формальный",
     image: "https://example.com/blazer.jpg",
     price: 4000,
-    data: "",
+    data: 1,
   },
   {
     id: 24,
@@ -298,7 +298,7 @@ export default [
     image: "https://example.com/cap.jpg",
     price: 800,
 
-    data: "",
+    data: 1,
   },
 
   {
@@ -306,41 +306,41 @@ export default [
     name: "Джемпер с косами",
     image: "https://example.com/sweater.jpg",
     price: 2800,
-    data: "",
+    data: 1,
   },
   {
     id: 26,
     name: "Женские леггинсы",
     image: "https://example.com/leggings.jpg",
     price: 1500,
-    data: "",
+    data: 1,
   },
   {
     id: 27,
     name: "Куртка-бомбер",
     image: "https://example.com/bomber.jpg",
     price: 2200,
-    data: "",
+    data: 1,
   },
   {
     id: 28,
     name: "Футболка с принтом",
     image: "https://example.com/tshirt.jpg",
     price: 1000,
-    data: "",
+    data: 1,
   },
   {
     id: 29,
     name: "Женские джинсы",
     image: "https://example.com/jeans.jpg",
     price: 1800,
-    data: "",
+    data: 1,
   },
   {
     id: 30,
     name: "Плащ из шерсти",
     image: "https://example.com/coat.jpg",
     price: 5000,
-    data: "",
+    data: 1,
   }, */
 ];
