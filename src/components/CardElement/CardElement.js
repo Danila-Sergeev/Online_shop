@@ -1,6 +1,6 @@
 import cardElementStyles from "./CardElement.module.css";
 import data from "../../utils/data";
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { REMOVE_ITEM, RESET_ITEM } from "../../services/actions/cardItems";
 export default function CardElement({ onClose }) {
@@ -17,7 +17,11 @@ export default function CardElement({ onClose }) {
       onClose();
     }
   }, [removeItem]);
-
+  const fullPrice = useMemo(() => {
+    let price = 0;
+    Carditems.forEach((item) => (price += item.props.price));
+    return price ? price : 0;
+  }, [Carditems]);
   return (
     <div className={cardElementStyles.main}>
       <button
@@ -46,6 +50,7 @@ export default function CardElement({ onClose }) {
           </div>
         );
       })}
+      <button className={cardElementStyles.priceBtn}>{fullPrice} $</button>
     </div>
   );
 }

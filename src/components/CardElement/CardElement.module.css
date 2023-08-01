@@ -3,7 +3,7 @@
 }
 .box {
   display: flex;
-  margin: 70px auto 20px auto;
+  margin: 65px auto 70px auto;
   border: solid 1px;
   align-items: center;
   justify-content: space-around;
@@ -15,7 +15,7 @@
 .main {
   margin: auto;
   padding-right: 20px;
-  max-height: 600px;
+  max-height: 609px;
   overflow-y: scroll;
 }
 .main::-webkit-scrollbar {
@@ -66,8 +66,30 @@
   position: absolute;
   left: 35%;
   margin-top: 10px;
+  margin-bottom: 10px;
 }
 .resetBtn:hover {
   border-radius: 5px;
   background-color: aliceblue;
+}
+.priceBtn {
+  z-index: 10000;
+  color: black;
+  padding: 0;
+  border: none;
+  font: inherit;
+  font-size: 18px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: white;
+  transition: background-color 0.3s ease-in-out;
+  transition: border-radius 0.3s ease-in-out;
+  cursor: pointer;
+  width: 150px;
+  height: 45px;
+  position: absolute;
+  left: 35%;
+  bottom: 1%;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
