@@ -19,7 +19,10 @@ export default function Product() {
     setSrc(props.image);
   }, [props]);
   const addItem = () => {
-    dispatch({ type: ADD_ITEM, item: { props, id4: uuidv4() } });
+    dispatch({
+      type: ADD_ITEM,
+      item: { props, id4: uuidv4(), id5: uuidv4() },
+    });
   };
   return (
     <div className={productStyle.mainBox}>

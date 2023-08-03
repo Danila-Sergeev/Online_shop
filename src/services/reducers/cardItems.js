@@ -1,4 +1,9 @@
-import { REMOVE_ITEM, RESET_ITEM, ADD_ITEM } from "../actions/cardItems";
+import {
+  REMOVE_ITEM,
+  RESET_ITEM,
+  ADD_ITEM,
+  DECREASE_COUNT,
+} from "../actions/cardItems";
 
 const initialState = {
   items: [],
@@ -29,6 +34,13 @@ export const cardItemReducer = (state = initialState, action) => {
         ...state,
         items: state.items.filter((item) => item.props.id !== action.id),
         unq: state.unq.filter((item) => item.props.id !== action.id),
+      };
+    }
+    case DECREASE_COUNT: {
+      return {
+        ...state,
+        items: state.items.filter((item) => item.id4 !== action.id4),
+        unq: state.unq.filter((item) => item.id4 !== action.id4),
       };
     }
     default: {
