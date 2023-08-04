@@ -11,17 +11,18 @@ export default function Product() {
   const largeImg = (imgSrc) => {
     setSrc(imgSrc);
   };
-
+  const Carditems = useSelector((store) => store.cardItem.items);
   const { state } = useLocation() || {};
   const { props } = state;
   const dispatch = useDispatch();
   useEffect(() => {
     setSrc(props.image);
   }, [props]);
+  const length = Carditems.length;
   const addItem = () => {
     dispatch({
       type: ADD_ITEM,
-      item: { props, id4: uuidv4(), id5: uuidv4() },
+      item: { props, id4: uuidv4(), id5: uuidv4(), length },
     });
   };
   return (

@@ -12,6 +12,8 @@ import { v4 as uuidv4 } from "uuid";
 export default function CardElement({ onClose }) {
   const Carditems = useSelector((store) => store.cardItem.items);
   const CarditemsUnq = useSelector((store) => store.cardItem.unq);
+  console.log(Carditems);
+  console.log(CarditemsUnq);
   const dispatch = useDispatch();
   const removeItem = (id) => {
     dispatch({ type: REMOVE_ITEM, id });
@@ -30,10 +32,11 @@ export default function CardElement({ onClose }) {
   /*   const increaseCount = (id) => {
     dispatch({ type: INCREASE_COUNT, id });
   }; */
+  const length = Carditems.length;
   const addItem = (props) => {
     dispatch({
       type: ADD_ITEM,
-      item: { props, id4: uuidv4(), id5: uuidv4() },
+      item: { props, id4: uuidv4(), id5: uuidv4(), length },
     });
   };
   const fullPrice = useMemo(() => {
