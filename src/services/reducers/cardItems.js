@@ -15,10 +15,11 @@ export const cardItemReducer = (state = initialState, action) => {
       return {
         ...state,
         items: [...state.items, action.item],
-        unq: state.items.filter(
+        unq: [...state.items, action.item].filter(
           (elem, index) =>
-            state.items.findIndex((obj) => obj.props.id === elem.props.id) ===
-            index
+            [...state.items, action.item].findIndex(
+              (obj) => obj.props.id === elem.props.id
+            ) === index
         ),
       };
     }

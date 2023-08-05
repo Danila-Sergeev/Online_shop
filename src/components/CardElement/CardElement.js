@@ -1,5 +1,4 @@
 import cardElementStyles from "./CardElement.module.css";
-import data from "../../utils/data";
 import React, { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
