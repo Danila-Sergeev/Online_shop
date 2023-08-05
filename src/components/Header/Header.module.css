@@ -26,9 +26,13 @@
   cursor: pointer;
   text-decoration: none;
   color: inherit;
+  transition: border-bottom 0.3s ease-in-out;
 }
 .link:first-child {
   margin-left: 0px;
+}
+.link:hover {
+  border-bottom: solid 1.33px black;
 }
 .img {
   width: 30px;

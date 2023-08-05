@@ -132,4 +132,5 @@
   justify-content: center;
   display: flex;
   z-index: 10000;
+  cursor: pointer;
 }
