@@ -40,8 +40,16 @@ export const cardItemReducer = (state = initialState, action) => {
     case DECREASE_COUNT: {
       return {
         ...state,
-        items: state.items.filter((item) => item.id4 !== action.id4),
-        unq: state.unq.filter((item) => item.id4 !== action.id4),
+        items: state.items.filter((item) => item.id4 !== action.item.id4),
+        unq: state.items
+          .filter((item) => item.id4 !== action.item.id4)
+          .filter(
+            (elem, index) =>
+              state.items
+                .filter((item) => item.id4 !== action.item.id4)
+                .findIndex((obj) => obj.props.id === elem.props.id) === index
+          ),
+        //unq: state.unq.filter((item) => item.id4 !== action.id4),
       };
     }
     default: {

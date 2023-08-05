@@ -20,8 +20,8 @@ export default function CardElement({ onClose }) {
   const resetItem = () => {
     dispatch({ type: RESET_ITEM });
   };
-  const decreaseItem = (id4) => {
-    dispatch({ type: DECREASE_COUNT, id4 });
+  const decreaseItem = (id4, props) => {
+    dispatch({ type: DECREASE_COUNT, item: { props, id4 } });
   };
   useEffect(() => {
     if (Carditems.length === 0) {
@@ -55,7 +55,7 @@ export default function CardElement({ onClose }) {
       </button>
       {Carditems.map((items) => {
         items.props.data = 0;
-
+        console.log(items.id4);
         /*  подсчет количества повторяющегося товара */
 
         Carditems.forEach((obj) => {
@@ -67,8 +67,9 @@ export default function CardElement({ onClose }) {
 
       {CarditemsUnq.map((unique) => {
         let uniqueItem = unique.props;
+        console.log(unique.id4);
         return (
-          <div className={cardElementStyles.box} key={CarditemsUnq.id5}>
+          <div className={cardElementStyles.box} key={unique.id4}>
             <img className={cardElementStyles.img} src={uniqueItem.image}></img>
             <div className={cardElementStyles.info}>
               <p className={cardElementStyles.name}>{uniqueItem.name}</p>
@@ -76,7 +77,7 @@ export default function CardElement({ onClose }) {
               <div className={cardElementStyles.counterBox}>
                 <button
                   className={cardElementStyles.plusminus}
-                  onClick={() => decreaseItem(CarditemsUnq.id4)}
+                  onClick={() => decreaseItem(unique.id4, uniqueItem)}
                 >
                   -
                 </button>
