@@ -18,11 +18,10 @@ export default function Product() {
   useEffect(() => {
     setSrc(props.image);
   }, [props]);
-  const length = Carditems.length;
   const addItem = () => {
     dispatch({
       type: ADD_ITEM,
-      item: { props, id4: uuidv4(), id5: uuidv4(), length },
+      item: { props, id4: uuidv4(), id5: uuidv4() },
     });
   };
   return (

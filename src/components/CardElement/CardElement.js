@@ -8,7 +8,7 @@ import {
   ADD_ITEM,
 } from "../../services/actions/cardItems";
 import { v4 as uuidv4 } from "uuid";
-export default function CardElement({ onClose }) {
+export default function CardElement() {
   /*  получаем данные из хранилища */
   const Carditems = useSelector((store) => store.cardItem.items);
   const CarditemsUnq = useSelector((store) => store.cardItem.unq);
@@ -27,41 +27,30 @@ export default function CardElement({ onClose }) {
   const decreaseItem = (id4, props) => {
     dispatch({ type: DECREASE_COUNT, item: { props, id4 } });
   };
-  const emptyCart = () => {
-    return (
-      <div>
-        <p>корзина пуста</p>
-      </div>
-    );
-  };
-  /*  useEffect(() => {
-    if (Carditems.length === 0) {
-      return (
-        <div>
-          <p>корзина пуста</p>
-        </div>
-      );
-    }
-  }, [removeItem]); */
-  const length = Carditems.length;
+  /* функция добавления товара в корзину */
   const addItem = (props) => {
     dispatch({
       type: ADD_ITEM,
-      item: { props, id4: uuidv4(), id5: uuidv4(), length },
+      item: { props, id4: uuidv4(), id5: uuidv4() },
     });
   };
+  /* функция подсчета полной цены корзины */
   const fullPrice = useMemo(() => {
     let price = 0;
     Carditems.forEach((item) => (price += item.props.price));
     return price ? price : 0;
   }, [Carditems]);
-
+  /* 
+return
+*/
+  /* проверка на наличие товаров в корзине */
   return Carditems.length === 0 ? (
     <div className={cardElementStyles.emptyBox}>
       <p className={cardElementStyles.emptyTitle}>CART IS EMPTY</p>
     </div>
   ) : (
     <div className={cardElementStyles.main}>
+      {/* кнопка очестки корзины */}
       <button
         onClick={() => resetItem()}
         className={cardElementStyles.resetBtn}
@@ -71,15 +60,14 @@ export default function CardElement({ onClose }) {
       </button>
       {Carditems.map((items) => {
         items.props.data = 0;
-        console.log(items.id4);
         /*  подсчет количества повторяющегося товара */
-
         Carditems.forEach((obj) => {
           if (items.props.image === obj.props.image) {
             items.props.data++;
           }
         });
       })}
+      {/* ретурн товара в корзину */}
       {CarditemsUnq.map((unique) => {
         let uniqueItem = unique.props;
         console.log(unique.id4);
