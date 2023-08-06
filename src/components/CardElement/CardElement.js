@@ -9,28 +9,40 @@ import {
 } from "../../services/actions/cardItems";
 import { v4 as uuidv4 } from "uuid";
 export default function CardElement({ onClose }) {
+  /*  получаем данные из хранилища */
   const Carditems = useSelector((store) => store.cardItem.items);
   const CarditemsUnq = useSelector((store) => store.cardItem.unq);
-  console.log(Carditems);
-  console.log(CarditemsUnq);
+  /*  console.log(Carditems);
+  console.log(CarditemsUnq); */
   const dispatch = useDispatch();
+  /* функция удвления одного элемента корзины */
   const removeItem = (id) => {
     dispatch({ type: REMOVE_ITEM, id });
   };
+  /* функция удаления всех элементов корзины */
   const resetItem = () => {
     dispatch({ type: RESET_ITEM });
   };
+  /* функция уменьшения количество определенного товара */
   const decreaseItem = (id4, props) => {
     dispatch({ type: DECREASE_COUNT, item: { props, id4 } });
   };
-  useEffect(() => {
+  const emptyCart = () => {
+    return (
+      <div>
+        <p>корзина пуста</p>
+      </div>
+    );
+  };
+  /*  useEffect(() => {
     if (Carditems.length === 0) {
-      onClose();
+      return (
+        <div>
+          <p>корзина пуста</p>
+        </div>
+      );
     }
-  }, [removeItem]);
-  /*   const increaseCount = (id) => {
-    dispatch({ type: INCREASE_COUNT, id });
-  }; */
+  }, [removeItem]); */
   const length = Carditems.length;
   const addItem = (props) => {
     dispatch({
@@ -44,7 +56,11 @@ export default function CardElement({ onClose }) {
     return price ? price : 0;
   }, [Carditems]);
 
-  return (
+  return Carditems.length === 0 ? (
+    <div className={cardElementStyles.emptyBox}>
+      <p className={cardElementStyles.emptyTitle}>CART IS EMPTY</p>
+    </div>
+  ) : (
     <div className={cardElementStyles.main}>
       <button
         onClick={() => resetItem()}
@@ -64,7 +80,6 @@ export default function CardElement({ onClose }) {
           }
         });
       })}
-
       {CarditemsUnq.map((unique) => {
         let uniqueItem = unique.props;
         console.log(unique.id4);
@@ -103,7 +118,6 @@ export default function CardElement({ onClose }) {
           </div>
         );
       })}
-
       <button className={cardElementStyles.priceBtn}>{fullPrice} $</button>
     </div>
   );

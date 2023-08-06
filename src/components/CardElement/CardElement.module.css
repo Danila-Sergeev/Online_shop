@@ -134,3 +134,20 @@
   z-index: 10000;
   cursor: pointer;
 }
+.emptyBox {
+  display: flex;
+  margin: 65px auto 70px auto;
+  border: solid 1px;
+  text-align: center;
+  align-items: center;
+  justify-content: space-around;
+  width: 400px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+}
+.emptyTitle {
+  margin: auto;
+  width: 200px;
+  height: 30px;
+}
