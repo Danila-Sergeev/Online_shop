@@ -1,5 +1,24 @@
 .shop {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.BtnFilter {
+  color: black;
+  padding: 0;
+  border: none;
+  font: inherit;
+  font-size: 18px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: white;
+  transition: background-color 0.3s ease-in-out;
+  transition: border-radius 0.3s ease-in-out;
+  cursor: pointer;
+  width: 100px;
+}
+.itemList {
+  display: flex;
   margin-bottom: 50px;
   flex-wrap: wrap;
   align-items: center;

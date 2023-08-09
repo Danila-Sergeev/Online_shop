@@ -7,7 +7,7 @@ import { ADD_ITEM } from "../../services/actions/cardItems";
 import { v4 as uuidv4 } from "uuid";
 
 export default function Product() {
-  const [src, setSrc] = useState("../../logo/Group 4.png");
+  const [src, setSrc] = useState();
   const largeImg = (imgSrc) => {
     setSrc(imgSrc);
   };

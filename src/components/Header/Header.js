@@ -22,7 +22,7 @@ export default function Header() {
         <div className={headerStiles.links}>
           <div>
             <NavLink
-              to="/home"
+              to="/"
               className={({ isActive }) =>
                 isActive ? headerStiles.activeLink : headerStiles.link
               }
@@ -39,14 +39,14 @@ export default function Header() {
           >
             Shop
           </NavLink>
-          <NavLink to="/home" className={headerStiles.link}>
+          <NavLink to="/" className={headerStiles.link}>
             About Us
           </NavLink>
         </div>
         <h1 className={headerStiles.title}>Online shop</h1>
         <div className={headerStiles.links}>
           <div className={headerStiles.imgBox}>
-            <NavLink to="/home" className={headerStiles.link}>
+            <NavLink to="/" className={headerStiles.link}>
               Search
             </NavLink>
             <img
@@ -55,7 +55,7 @@ export default function Header() {
             />
           </div>
 
-          <NavLink to="/home" className={headerStiles.link}>
+          <NavLink to="/" className={headerStiles.link}>
             Sign In
           </NavLink>
           <div className={headerStiles.imgBox}>

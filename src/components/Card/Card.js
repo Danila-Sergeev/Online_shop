@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 export default function Card(props) {
   const navigate = useNavigate();
   function goToNewPage() {
-    navigate("/product", { replace: true, state: { props: props } });
+    navigate("/product", { replace: false, state: { props: props } });
   }
   return (
     <div className={cardStyle.card} onClick={goToNewPage}>
