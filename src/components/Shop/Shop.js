@@ -1,37 +1,25 @@
 import shopStyles from './Shop.module.css';
 import data from '../../utils/data';
 import Card from '../Card/Card';
-import React, { useMemo } from 'react';
+import React, { useMemo, useCallback, useState, useEffect } from 'react';
 import { SortingControl } from '../SortingControl/SortingControl';
 import { useSearchParams } from 'react-router-dom';
 export const ASC = 'asc';
 export const DESC = 'desc';
+
+const sortCb = (priceSorting) => {
+	if (priceSorting === ASC) {
+		return (a, b) => (a.price < b.price ? 1 : a.price > b.price ? -1 : 0);
+	} else {
+		return (a, b) => (b.price > a.price ? -1 : b.price < a.price ? 1 : 0);
+	}
+};
+
 export default function Shop() {
-	/*   const sortCountries = useCallback(
-    (type) => {
-      let nextSortingValue;
-      switch (type) {
-        case "price": {
-          nextSortingValue = countrySorting
-            ? countrySorting === ASC
-              ? DESC
-              : ASC
-            : ASC;
-          break;
-        }
-
-        default: {
-          break;
-        }
-      }
-
-      setSearchParams({ [type]: nextSortingValue });
-    },
-    [personCountSorting, countrySorting]
-  ); */
-
 	const [searchParams, setSearchParams] = useSearchParams();
-
+	const [searchPriceParams, setsearchPriceParams] = useSearchParams('');
+	const [priceSorting, setpriceSorting] = useState('');
+	const [sortData, setSortData] = useState([]);
 	const onChange = (e) => {
 		let filter = e.target.value;
 		if (filter) {
@@ -40,29 +28,76 @@ export default function Shop() {
 			setSearchParams({});
 		}
 	};
+	useEffect(() => {
+		setSortData(data);
+	}, []);
 
-	const preparedData = useMemo(() => {
+	useMemo(() => {
 		const searchValue = searchParams.get('filter') || '';
-		return data.filter(
-			(obj) =>
-				obj.name
-					.toLocaleLowerCase()
-					.indexOf(searchValue.toLocaleLowerCase(), 0) > -1
+		setSortData(
+			data.filter(
+				(obj) =>
+					obj.name
+						.toLocaleLowerCase()
+						.indexOf(searchValue.toLocaleLowerCase(), 0) > -1
+			)
 		);
-	}, [data, searchParams]);
+	}, [searchParams]);
 
+	const loadCountryInfo = () => {
+		const normalizedData = sortData.sort(sortCb(priceSorting));
+		setSortData(normalizedData);
+	};
+
+	useEffect(() => {
+		if (searchParams.get('count')) {
+			setpriceSorting(searchPriceParams.get('count'));
+		}
+		// eslint-disable-next-line
+	}, [searchPriceParams]);
+
+	useEffect(() => {
+		loadCountryInfo();
+	}, [setsearchPriceParams]);
+
+	const sortCountries = useCallback(
+		(type) => {
+			let nextSortingValue;
+			switch (type) {
+				case 'count': {
+					nextSortingValue = priceSorting
+						? priceSorting === ASC
+							? DESC
+							: ASC
+						: ASC;
+				}
+				default: {
+					break;
+				}
+			}
+
+			setsearchPriceParams({ [type]: nextSortingValue });
+		},
+		[priceSorting]
+	);
 	return (
 		<div className={shopStyles.shop}>
-			<button className={shopStyles.BtnFilter}>price</button>
-
-			<input
-				placeholder="Поиск"
-				onChange={onChange}
-				value={searchParams.get('filter') || ''}
-			/>
+			<div className={shopStyles.sorting}>
+				<input
+					className={shopStyles.search}
+					placeholder="Search"
+					onChange={onChange}
+					value={searchParams.get('filter') || ''}
+				/>
+				<SortingControl
+					label={'price'}
+					value={priceSorting}
+					onSort={() => sortCountries('count')}
+				/>
+			</div>
 
 			<div className={shopStyles.itemList}>
-				{preparedData.map((obj) => {
+				{sortData.map((obj) => {
 					if (obj.id <= 15) {
 						return (
 							<Card

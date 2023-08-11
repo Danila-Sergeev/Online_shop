@@ -1,26 +1,30 @@
-:root {
-  --color-list: #2f2f37;
-}
-
 .container {
-  position: relative;
-  width: 240px;
+	color: black;
+	padding: 0;
+	border: none;
+	font: inherit;
+	font-size: 18px;
+	border: 1px solid black;
+	border-radius: 10px;
+	background-color: white;
+	transition: background-color 0.3s ease-in-out;
+	transition: border-radius 0.3s ease-in-out;
+	cursor: pointer;
+	width: 100px;
+	display: flex;
+	height: 30px;
+	align-items: center;
 }
-
-.selected_wrapper {
-  display: flex;
-  padding: 20px 0;
-  align-items: center;
-}
-
-.selected_wrapper:hover {
-  cursor: pointer;
-}
-
 .selected {
-  margin-right: 8px;
+	margin: auto;
 }
-
-.selected span {
-  font-weight: bold;
+.selected_wrapper {
+	margin: auto;
+	display: flex;
+	align-items: center;
+	padding-left: 6px;
+}
+.img {
+	height: 20px;
+	margin-top: 2px;
 }

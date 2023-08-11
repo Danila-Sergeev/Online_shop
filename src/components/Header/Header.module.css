@@ -1,69 +1,77 @@
 @font-face {
-  font-family: Proppins;
-  src: url(../../../public/fonts/Poppins-Light.ttf);
+	font-family: Proppins;
+	src: url(../../../public/fonts/Poppins-Light.ttf);
 }
 
 .header {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: space-between;
+	display: flex;
+	background-color: white;
+	justify-content: space-between;
+	width: 100%;
+}
+.headerStatic {
+	margin: 0%;
+	padding: 0%;
+	position: fixed;
+	z-index: 100;
+	width: 1000px;
 }
 .title {
-  font-family: Proppins;
-  margin: 0;
-  margin-top: 8px;
+	font-family: Proppins;
+	margin: 0;
+	margin-top: 8px;
 }
 .links {
-  display: flex;
-  align-items: center;
-  padding: 0;
-  color: inherit;
+	display: flex;
+	align-items: center;
+	padding: 0;
+	color: inherit;
 }
 .link {
-  margin-left: 60px;
-  list-style: none;
-  cursor: pointer;
-  text-decoration: none;
-  color: inherit;
-  transition: border-bottom 0.3s ease-in-out;
+	margin-left: 60px;
+	list-style: none;
+	cursor: pointer;
+	text-decoration: none;
+	color: inherit;
+	transition: border-bottom 0.3s ease-in-out;
 }
 .link:first-child {
-  margin-left: 0px;
+	margin-left: 0px;
 }
 .link:hover {
-  border-bottom: solid 1.33px black;
+	border-bottom: solid 1.33px black;
 }
 .img {
-  width: 30px;
-  padding-top: 05px;
-  cursor: pointer;
+	width: 30px;
+	padding-top: 05px;
+	cursor: pointer;
 }
 .imgBox {
-  margin-left: 60px;
-  display: flex;
-  align-items: center;
+	margin-left: 60px;
+	display: flex;
+	align-items: center;
 }
 .imgBox:first-child {
-  margin-left: 0px;
+	margin-left: 0px;
 }
 .img_shop {
-  width: 20px;
-  padding-top: 1px;
-  padding-left: 5px;
-  cursor: pointer;
+	width: 20px;
+	padding-top: 1px;
+	padding-left: 5px;
+	cursor: pointer;
 }
 .line {
-  margin-bottom: 20px;
+	margin-bottom: 20px;
+	margin-top: 0px;
 }
 .activeLink {
-  margin-left: 60px;
-  list-style: none;
-  cursor: pointer;
-  text-decoration: none;
-  color: inherit;
-  border-bottom: solid 1.33px black;
+	margin-left: 60px;
+	list-style: none;
+	cursor: pointer;
+	text-decoration: none;
+	color: inherit;
+	border-bottom: solid 1.33px black;
 }
 .activeLink:first-child {
-  margin-left: 0px;
+	margin-left: 0px;
 }
