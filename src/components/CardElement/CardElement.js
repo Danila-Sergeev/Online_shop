@@ -70,7 +70,6 @@ return
       {/* ретурн товара в корзину */}
       {CarditemsUnq.map((unique) => {
         let uniqueItem = unique.props;
-        console.log(unique.id4);
         return (
           <div className={cardElementStyles.box} key={unique.id4}>
             <img className={cardElementStyles.img} src={uniqueItem.image}></img>
