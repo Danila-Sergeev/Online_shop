@@ -1,10 +1,11 @@
 import productStyle from "./Product.module.css";
 import data from "../../utils/data";
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { ADD_ITEM } from "../../services/actions/cardItems";
 import { v4 as uuidv4 } from "uuid";
+import { getCard } from "../../services/actions/card";
 
 export default function Product() {
   const [src, setSrc] = useState();
@@ -24,45 +25,73 @@ export default function Product() {
       item: { props, id4: uuidv4(), id5: uuidv4() },
     });
   };
+  useEffect(() => {
+    dispatch(getCard(params.id));
+  }, []);
+
+  const card = useSelector((store) => store.card.card);
+  const params = useParams();
+
   return (
     <div className={productStyle.mainBox}>
       <div className={productStyle.box}>
         <div className={productStyle.imgBox}>
           <img
-            onClick={() => largeImg(props.image)}
+            onClick={() => largeImg(card.image)}
             className={productStyle.imgMin}
-            src={props.image}
+            src={card.image}
+            alt={card._id}
           ></img>
-          <img
-            onClick={() => largeImg(props.image1)}
-            className={productStyle.imgMin}
-            src={props.image1}
-          ></img>
-          <img
-            onClick={() => largeImg(props.image2)}
-            className={productStyle.imgMin}
-            src={props.image2}
-          ></img>
-          <img
-            onClick={() => largeImg(props.image3)}
-            className={productStyle.imgMin}
-            src={props.image3}
-          ></img>
-          <img
-            onClick={() => largeImg(props.image4)}
-            className={productStyle.imgMin}
-            src={props.image4}
-          ></img>
+          {card.image1 ? (
+            <img
+              onClick={() => largeImg(card.image1)}
+              className={productStyle.imgMin}
+              src={card.image1}
+              alt={card._id}
+            ></img>
+          ) : (
+            <></>
+          )}
+          {card.image2 ? (
+            <img
+              onClick={() => largeImg(card.image2)}
+              className={productStyle.imgMin}
+              src={card.image2}
+              alt={card._id}
+            ></img>
+          ) : (
+            <></>
+          )}
+          {card.image3 ? (
+            <img
+              onClick={() => largeImg(card.image3)}
+              className={productStyle.imgMin}
+              src={card.image3}
+              alt={card._id}
+            ></img>
+          ) : (
+            <></>
+          )}
+          {card.image4 ? (
+            <img
+              onClick={() => largeImg(card.image4)}
+              className={productStyle.imgMin}
+              src={card.image4}
+              alt={card._id}
+            ></img>
+          ) : (
+            <></>
+          )}
         </div>
-        <img className={productStyle.imgLarge} src={src}></img>
+        <img className={productStyle.imgLarge} src={src} alt={card._id}></img>
       </div>
       <div className={productStyle.infoBox}>
         <div className={productStyle.headerBox}>
-          <h2 className={productStyle.name}>{props.name}</h2>
-          <p className={productStyle.price}>{props.price} $</p>
+          <h2 className={productStyle.name}>{card.name}</h2>
+          <p className={productStyle.price}>{card.price} $</p>
         </div>
         <hr></hr>
-        <p className={productStyle.about}>{props.data}</p>
+        <p className={productStyle.about}>{card.data}</p>
         <div className={productStyle.sizesBox}></div>
         <button onClick={addItem} className={productStyle.btn}>
           Add to Card
