@@ -43,7 +43,9 @@ export default function Header() {
             About Us
           </NavLink>
         </div>
-        <h1 className={headerStiles.title}>Online shop</h1>
+        <NavLink to="/" className={headerStiles.title}>
+          Online shop
+        </NavLink>
         <div className={headerStiles.links}>
           <div className={headerStiles.imgBox}>
             <NavLink to="/" className={headerStiles.link}>

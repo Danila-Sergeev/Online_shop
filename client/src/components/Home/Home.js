@@ -6,10 +6,10 @@ import data from "../../utils/data";
 import Card from "../Card/Card";
 import React from "react";
 
-const Home = () => {
+const Home = ({ cards }) => {
   return (
     <div className={homeStiles.home}>
-      <Slider />
+      <Slider cards={cards} />
       <div className={homeStiles.textBox}>
         <p className={hoveStyles.text}>PARKS AND RECREATION</p>
         <NavLink to="/shop" className={homeStiles.link}>
@@ -19,8 +19,8 @@ const Home = () => {
 
       <div className={homeStiles.photosBox}>
         <NavLink to="/shop" className={homeStiles.photoBox}>
-          {data.map((obj) => {
-            if (obj.id === 9) {
+          {cards.map((obj) => {
+            if (obj._id === "65f842e9de75bbed6040ad60") {
               return (
                 <img
                   key={obj.image}
@@ -39,8 +39,8 @@ const Home = () => {
           </div>
         </NavLink>
         <NavLink to="/shop" className={homeStiles.photoBox}>
-          {data.map((obj) => {
-            if (obj.id === 7) {
+          {cards.map((obj) => {
+            if (obj._id === "65f84421f94d8f70388f9c15") {
               return (
                 <img
                   key={obj.image}
@@ -61,8 +61,8 @@ const Home = () => {
         </NavLink>
       </div>
       <NavLink to="/shop" className={homeStiles.bar}>
-        {data.map((obj) => {
-          if (obj.id <= 3) {
+        {cards.map((obj) => {
+          if (obj.price <= 2000) {
             return (
               <div key={obj.image} className={homeStiles.card}>
                 <Card key={obj.image} {...obj}></Card>

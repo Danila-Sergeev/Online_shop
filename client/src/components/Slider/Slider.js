@@ -5,7 +5,7 @@ import data from "../../utils/data";
 import "../../../node_modules/swiper/swiper-bundle.min.css";
 
 import sliderStyles from "./Slider.module.css";
-export default function Slider() {
+export default function Slider({ cards }) {
   return (
     <div>
       <Swiper
@@ -17,10 +17,10 @@ export default function Slider() {
         slidesPerView={1}
         pagination={{ clickable: true }}
       >
-        {data.map((obj) => {
-          if (obj.id <= 3) {
+        {cards.map((obj) => {
+          if (obj.price <= 1500) {
             return (
-              <SwiperSlide key={obj.id}>
+              <SwiperSlide key={obj._id}>
                 <div className={sliderStyles.box}>
                   <img
                     className={sliderStyles.img}
