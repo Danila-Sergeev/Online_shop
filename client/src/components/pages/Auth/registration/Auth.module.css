@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  width: 400px;
+  padding: 20px;
+}
+.title {
+  margin: auto;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8px;
+  background-color: white;
+}
+.button {
+  text-decoration: none;
+  color: black;
+  margin: 0;
+  background-color: azure;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100%;
+  margin-top: 20px;
+}
+.regBox {
+  display: flex;
+  padding: 0;
+  margin-left: 20px;
+}
+.reg {
+  color: blue;
+  margin-left: 8px;
+}
+.reg:hover {
+  color: blue;
+  text-decoration: underline;
+}

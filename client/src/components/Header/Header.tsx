@@ -3,6 +3,8 @@ import React, { useState, FC } from "react";
 import headerStiles from "./Header.module.css";
 /* import CardPopup from "../CardPopup/CardPopup"; */
 import { useSelector } from "react-redux";
+import { useAppDispatch } from "../../utils/hoc";
+import { SIGNOUT } from "../../services/actions/user";
 const Header: FC = () => {
   /* Обработчик состояния попапа */
   const [modal, setModal] = useState(false);
@@ -13,6 +15,13 @@ const Header: FC = () => {
   };
   const handleCloseModal = () => {
     setModal(false);
+  };
+  const user = useSelector((store: any) => store.user);
+  console.log(user);
+  const dispatch = useAppDispatch();
+
+  const logOut = () => {
+    dispatch(SIGNOUT);
   };
 
   return (
@@ -57,9 +66,14 @@ const Header: FC = () => {
             />
           </div>
 
-          <NavLink to="/" className={headerStiles.link}>
-            Sign In
-          </NavLink>
+          {user.isAuth ? (
+            <div className={headerStiles.link}>{user.name}</div>
+          ) : (
+            <NavLink to="/signIn" className={headerStiles.link}>
+              Sign In
+            </NavLink>
+          )}
+
           <div className={headerStiles.imgBox}>
             <div onClick={handleOpenModal} className={headerStiles.link}>
               {Carditems.length} items
@@ -70,6 +84,13 @@ const Header: FC = () => {
               src={require("../../logo/free-icon-shopping-bag-4903482.png")}
             />
           </div>
+          {user.isAuth ? (
+            <button onClick={() => logOut} className={headerStiles.link}>
+              Выйти
+            </button>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
       <hr className={headerStiles.line}></hr>

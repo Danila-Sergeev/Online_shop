@@ -1,7 +1,7 @@
 import React from "react";
 import sorting from "../../logo/sorting.svg";
 import styles from "./SortingControl.module.css";
-import { ASC } from "../../components/Shop/Shop";
+import { ASC } from "../pages/Shop/Shop";
 
 export const SortingControl = ({ label, onSort, value }) => {
   return (
