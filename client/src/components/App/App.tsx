@@ -5,8 +5,6 @@ import Shop from "../Shop/Shop";
 import Home from "../Home/Home";
 import Product from "../Product/Product";
 import React, { FC, useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
 import { getCards } from "../../services/actions/cards";
 import { useAppDispatch } from "../../utils/hoc";
 const App: FC = () => {

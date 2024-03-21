@@ -1,8 +1,7 @@
 import { NavLink } from "react-router-dom";
-import React, { useState, useMemo, FC } from "react";
+import React, { useState, FC } from "react";
 import headerStiles from "./Header.module.css";
 /* import CardPopup from "../CardPopup/CardPopup"; */
-import CardElement from "../CardElement/CardElement";
 import { useSelector } from "react-redux";
 const Header: FC = () => {
   /* Обработчик состояния попапа */
@@ -52,6 +51,7 @@ const Header: FC = () => {
               Search
             </NavLink>
             <img
+              alt={""}
               className={headerStiles.img}
               src={require("../../logo/free-icon-search-2414255.png")}
             />
@@ -65,6 +65,7 @@ const Header: FC = () => {
               {Carditems.length} items
             </div>
             <img
+              alt={""}
               className={headerStiles.img_shop}
               src={require("../../logo/free-icon-shopping-bag-4903482.png")}
             />

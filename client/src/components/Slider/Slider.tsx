@@ -5,6 +5,7 @@ import "../../../node_modules/swiper/swiper-bundle.min.css";
 
 import sliderStyles from "./Slider.module.css";
 import { FC } from "react";
+import { ICard } from "../../services/constants";
 interface ISlider {
   cards: any;
 }
@@ -21,7 +22,7 @@ const Slider: FC<ISlider> = ({ cards }) => {
         slidesPerView={1}
         pagination={{ clickable: true }}
       >
-        {cards.map((obj: any) => {
+        {cards.map((obj: ICard) => {
           if (obj.price <= 1500) {
             return (
               <SwiperSlide key={obj._id}>

@@ -1,7 +1,7 @@
 import { FC } from "react";
 import cardStyle from "./Card.module.css";
 import { useNavigate } from "react-router-dom";
-import { ICard, ICardPayloadData } from "../../services/constants";
+import { ICard } from "../../services/constants";
 
 const Card: FC<ICard> = (props) => {
   const { image, _id, name, price } = props;
